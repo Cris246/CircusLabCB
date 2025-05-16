@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4fa7eb68-4789-4dc2-a881-555f14726ee5" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2v2w1CX9mdGOUFX0WHIBjQHTjPf" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "full.screen.before.presentation.mode": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/criis/OneDrive/Escritorio/CircusLabPUEBA",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\ANGULAR\\DAW\\CircusLabCB\\frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ANGULAR\DAW\CircusLabCB\CircusLab" />
+      <recent name="C:\ANGULAR\DAW\CircusLabCB\frontend\src\app\components" />
+      <recent name="C:\ANGULAR\DAW\CircusLabCB\frontend\src\assets" />
+      <recent name="C:\ANGULAR\DAW\CircusLabCB\frontend\public" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4fa7eb68-4789-4dc2-a881-555f14726ee5" name="Changes" comment="" />
+      <created>1743356259328</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1743356259328</updated>
+      <workItem from="1743356260391" duration="2377000" />
+      <workItem from="1743439388785" duration="953000" />
+      <workItem from="1743440381322" duration="1668000" />
+      <workItem from="1743611655634" duration="4236000" />
+      <workItem from="1743618366105" duration="308000" />
+      <workItem from="1743623029708" duration="740000" />
+      <workItem from="1743783653708" duration="12000" />
+      <workItem from="1743783882166" duration="320000" />
+      <workItem from="1743961421961" duration="4000" />
+      <workItem from="1744388941999" duration="3428000" />
+      <workItem from="1744565355461" duration="1778000" />
+      <workItem from="1744650967262" duration="3576000" />
+      <workItem from="1744972032207" duration="1114000" />
+      <workItem from="1745163815483" duration="7359000" />
+      <workItem from="1745229002195" duration="7532000" />
+      <workItem from="1745246865799" duration="6581000" />
+      <workItem from="1745774883548" duration="1706000" />
+      <workItem from="1745780473227" duration="2000" />
+      <workItem from="1746114138602" duration="1979000" />
+      <workItem from="1746116539191" duration="44000" />
+      <workItem from="1746116644494" duration="4081000" />
+      <workItem from="1746192020184" duration="7673000" />
+      <workItem from="1746463818142" duration="3743000" />
+      <workItem from="1746636506849" duration="4566000" />
+      <workItem from="1746724927348" duration="4127000" />
+      <workItem from="1746808741943" duration="620000" />
+      <workItem from="1746862664541" duration="3796000" />
+      <workItem from="1746866918162" duration="2695000" />
+      <workItem from="1746977043303" duration="6827000" />
+      <workItem from="1747328347668" duration="620000" />
+      <workItem from="1747404306105" duration="3000" />
+      <workItem from="1747404409390" duration="509000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
