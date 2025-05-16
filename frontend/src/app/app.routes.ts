@@ -5,7 +5,8 @@ import { NovedadEditComponent } from './components/novedad-edit/novedad-edit.com
 import { TutorialListComponent } from './components/tutorial-list/tutorial-list.component';
 import { TutorialEditComponent } from './components/tutorial-edit/tutorial-edit.component';
 import { LoginComponent } from './components/login/login.component';
-import { AuthGuard } from './guards/auth.guard'; // Asegúrate de tener este guard
+import { AuthGuard } from './guards/auth.guard';
+import {ContactoComponent} from "./components/contacto/contacto.component"; // Asegúrate de tener este guard
 
 export const routes: Routes = [
   {
@@ -16,6 +17,10 @@ export const routes: Routes = [
   {
     path: 'inicio',
     component: InicioComponent
+  },
+  {
+    path: 'contacto',
+    component: ContactoComponent
   },
   {
     path: 'novedad-list',
