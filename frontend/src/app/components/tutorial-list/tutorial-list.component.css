@@ -1,0 +1,92 @@
+.tuto-container {
+  max-width: 1500px;
+  margin: 20px auto;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.75); /* Fondo ligeramente translúcido */
+  backdrop-filter: blur(20px); /* Desenfoque más suave */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  min-height: 150px; /* Altura mínima mayor */
+  padding: 20px; /* Espacio interno aumentado */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+.tuto-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.titulo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.contenido {
+  font-size: 1rem;
+  color: #333;
+}
+
+.imagen-novedad {
+  width: 140px;
+  height: 140px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.icon-hover {
+  transition: transform 0.3s ease; /* Transición suave */
+}
+
+.icon-hover:hover {
+  transform: scale(1.2); /* Hace que el icono se agrande un poco en hover */
+}
+.boton-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px;
+}
+
+.nuevo-tuto-btn {
+  background-color: rgba(255, 255, 255, 0.75);
+  color: #b388eb;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nuevo-tuto-btn:hover {
+  background-color:#b388eb ;
+  color: white;
+}
+.filtro-container {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: rgba(255, 255, 255, 0.75); /* Blanco traslúcido */
+  border-radius: 25px; /* Bordes redondeados */
+
+}
+
+.filtro-container label {
+  margin-right: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color:#b388eb;
+}
+
+.filtro-container select {
+  padding: 8px 12px;
+  border-radius: 20px; /* Bordes redondeados */
+  background-color: #d3b4f7; /* Color lila */
+  border: 1px solid #cfa0e3; /* Borde lila claro */
+  font-size: 1rem;
+  font-weight: 500;
+  outline: none;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.filtro-container select:hover {
+  background-color: #b388eb;
+}

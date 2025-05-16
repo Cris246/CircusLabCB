@@ -1,0 +1,33 @@
+.img-preview {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Estilo del formulario dentro de un cuadrado */
+.form-container {
+  background-color: rgba(255, 255, 255, 0.75); /* Fondo ligeramente translúcido */
+  backdrop-filter: blur(20px); /* Desenfoque más suave */
+  padding: 30px;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  margin-top: 20px; /* Separación desde arriba */
+}
+
+/* Estilo personalizado para el botón lila */
+.btn-lila {
+  background-color: #9b59b6; /* Lila */
+  color: white; /* Texto en blanco */
+  border: none; /* Sin borde */
+  padding: 10px 20px; /* Padding ajustado */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s ease; /* Efecto de transición */
+}
+
+.btn-lila:hover {
+  background-color: #8e44ad; /* Lila más oscuro cuando se pasa el ratón */
+}
+

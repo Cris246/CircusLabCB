@@ -1,0 +1,30 @@
+.navbar {
+  font-family: "Montserrat", sans-serif;
+
+}
+.custom-navbar {
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px); /* Efecto difuminado para mejorar la apariencia */
+  border-radius: 10px; /* Bordes redondeados opcionales */
+  padding: 10px 20px;
+}
+.navbar .nav-link {
+  font-optical-sizing: auto;
+  font-weight:50;
+  font-style: normal;
+  border-radius: 50px; /* Bordes redondeados */
+  padding: 10px 20px;  /* Espaciado para que el botón sea más grande */
+  transition: all 0.3s ease; /* Transición suave para el efecto */
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  box-shadow: 0 0 15px rgba(128, 0, 128, 0.5); /* Resplandor morado alrededor del botón */
+  background-color: rgba(128, 0, 128, 0.1); /* Fondo ligeramente morado cuando se pasa el mouse o se hace foco */
+  outline: none; /* Eliminar el borde por defecto del foco */
+}
+
+/* Estilo opcional para cambiar el color de fondo cuando se hace clic en el botón */
+.navbar .nav-link:active {
+  background-color: rgba(128, 0, 128, 0.2); /* Fondo más oscuro cuando se hace clic */
+}

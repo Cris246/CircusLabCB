@@ -1,0 +1,64 @@
+@defer(when dataLoaded){
+  <div class="row">
+    <!-- Formulario de creación de novedad (columna 1) -->
+    <div class="col-md-6 my-2">
+      <!-- Contenedor cuadrado con bordes y sombra -->
+      <div class="card p-4 border rounded shadow-sm">
+        <form [formGroup]="formNovedad">
+          <h2 class="text-center text-black">{{edit ? 'Editar' : 'Nueva'}} Novedad</h2>
+
+          <!-- Título del formulario -->
+          <div class="form-floating mb-3">
+            <input type="text" formControlName="titulo" class="form-control" id="titulo" placeholder="titulo">
+            <label for="titulo">Título</label>
+            <div *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)">
+              <div class="alert alert-danger" *ngIf="titulo.errors?.['required']">Se necesita un título</div>
+            </div>
+          </div>
+
+          <div class="form-floating mb-3">
+            <textarea formControlName="contenido" class="form-control" id="contenido" placeholder="contenido" style="height: 100px;"></textarea>
+            <label for="contenido">Contenido</label>
+            <div *ngIf="contenido.invalid && (contenido.dirty || contenido.touched)">
+              <div class="alert alert-danger" *ngIf="contenido.errors?.['required']">
+                Se necesita un contenido
+              </div>
+            </div>
+          </div>
+
+          <!-- Campo de imagen -->
+          <div class="form-floating mb-3">
+            <input type="text" formControlName="media" class="form-control" id="media" placeholder="media">
+            <label for="media">Imagen</label>
+            <div *ngIf="media.invalid && (media.dirty || media.touched)">
+              <div class="alert alert-danger" *ngIf="media.errors?.['required']">Se necesita una imagen</div>
+              <div class="alert alert-danger" *ngIf="media.errors?.['minlength']">Debe de tener al menos 5 caracteres</div>
+            </div>
+          </div>
+
+          <!-- Botón para enviar el formulario -->
+          <div class="d-flex justify-content-center">
+            <button class="btn-lila" (click)="submit()">Enviar</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+    <!-- Previsualización de la imagen (columna 2) -->
+    <div class="col-md-6 my-2">
+      <div class="card shadow bg-transparent border-0">
+        <!-- Mostrar imagen o imagen por defecto -->
+        <img [src]="media.value ? media.value : 'src/assets/notFound.jpg'" alt="imagen de novedad" class="img-fluid img-preview">
+      </div>
+    </div>
+  </div>
+}
+
+@placeholder (){
+  <div class="d-flex justify-content-center">
+    <div class="spinner-border text-success" role="status">
+      <span class="visually-hidden">cargando...</span>
+    </div>
+  </div>
+}

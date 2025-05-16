@@ -1,0 +1,25 @@
+
+.cuadrado {
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex; /* Flexbox para organizar contenido */
+  align-items: center;
+  padding: 20px;
+  width: 1000px;
+  height: 500px; /* Alto */
+  border-radius: 20px; /* Bordes redondeados */
+  backdrop-filter: blur(10px); /* Efecto de desenfoque */
+}
+
+.texto {
+  flex: 1; /* El texto ocupa el espacio restante */
+  margin-right: 20px; /* Espacio entre el texto y la imagen */
+  font-size: 16px;
+}
+
+.imagen {
+  width: 200px; /* Ajusta el ancho según necesites */
+  height: 300px; /* Ajusta la altura mayor para hacerlo vertical */
+  object-fit: cover; /* Para que la imagen llene el espacio sin deformarse */
+  display: block; /* Evita márgenes adicionales si está dentro de un contenedor inline */
+  border-radius: 10px; /* Opcional: bordes redondeados */
+}

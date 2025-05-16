@@ -1,0 +1,46 @@
+@defer(when dataLoaded){
+<div class="boton-container">
+  <button class="nueva-novedad-btn" [routerLink]="'/novedad-add/'">
+    Nueva Novedad
+  </button>
+</div>
+  @for (novedad of novedades; track novedad._id) {
+    <div class="novedad-container mx-auto d-flex align-items-start mb-4 p-3 border rounded shadow-sm" style="height: 200px;">
+
+      <!-- Imagen -->
+      <div class="me-3" style="width: 150px; height: 100%; overflow: hidden;">
+        <img [src]="novedad.media" [alt]="novedad.titulo" class="imagen-novedad" style="object-fit: cover; width: 100%; height: 100%;">
+      </div>
+
+      <!-- Contenido -->
+      <div class="flex-grow-1 d-flex flex-column justify-content-between">
+        <div class="titulo fw-bold fs-5">{{ novedad.titulo }}</div>
+        <div class="contenido text-muted">{{ novedad.contenido }}</div>
+      </div>
+
+      <!-- Iconos (eliminar / editar) -->
+      <div class="d-flex flex-column align-items-end justify-content-between ms-3" style="height: 100%;">
+        <fa-icon
+          [icon]="faTrashCan"
+          class=" fs-3 mb-3 icon-hover"
+          style="color:#6a1b9a"
+          (click)="deleteNovedad(novedad)">
+        </fa-icon>
+
+        <a
+          [routerLink]="['/novedad-edit', novedad._id]"
+          class="text-black fs-3 icon-hover">
+          <fa-icon [icon]="faPenToSquare"></fa-icon>
+        </a>
+      </div>
+
+    </div>
+  }
+
+}@placeholder (){
+  <div class="d-flex justify-content-center">
+    <div class="spinner-border text-success" role="status">
+      <span class="visually-hidden"> cargando...</span>
+    </div>
+  </div>
+}
