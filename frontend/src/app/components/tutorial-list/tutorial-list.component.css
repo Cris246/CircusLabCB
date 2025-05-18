@@ -21,14 +21,29 @@
 .contenido {
   font-size: 1rem;
   color: #333;
+  max-height: 3.6em; /* 2 líneas aprox. según el tamaño de fuente */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* número de líneas que se muestran */
+  -webkit-box-orient: vertical;
 }
 
-.imagen-novedad {
-  width: 140px;
-  height: 140px;
-  border-radius: 12px;
-  object-fit: cover;
+
+.imagen-fija {
+  width: 150px;
+  height: 150px; /* o la altura que prefieras */
+  overflow: hidden;
+  flex-shrink: 0; /* evita que se reduzca si el texto es muy largo */
 }
+
+.imagen-tuto {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
 
 .icon-hover {
   transition: transform 0.3s ease; /* Transición suave */
