@@ -9,64 +9,72 @@ import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-novedad-list',
-  standalone: true,
-  imports: [
-    FaIconComponent,
-    ReactiveFormsModule,
-      CommonModule,
-      RouterLink,
-
-  ],
-  templateUrl: './novedad-list.component.html',
-  styleUrls: ['./novedad-list.component.css']
+    selector: 'app-novedad-list',
+    standalone: true,
+    imports: [
+        FaIconComponent,
+        ReactiveFormsModule,
+        CommonModule,
+        RouterLink,
+    ],
+    templateUrl: './novedad-list.component.html',
+    styleUrls: ['./novedad-list.component.css']
 })
 export class NovedadListComponent {
-private readonly novedadService=inject(NovedadService);
+    private readonly novedadService = inject(NovedadService);
     public readonly authService = inject(AuthService);
-novedades:Novedad[]=[];
-constructor() {
-  this.loadNovedades();
-}
 
-dataLoaded=false;
+    novedades: Novedad[] = [];
+    dataLoaded = false;
 
-  private loadNovedades() {
-    this.novedadService.getNovedades().subscribe(
-      {
-        next:value=>{
-          this.dataLoaded=true;
-          this.novedades = value;
-        },
-        complete:()=>{
-          console.log('novedades cargadas');
-        },
-        error:err=>{
-          console.error(err);
-        }
-      }
-    )
-  }
+    // Estado para controlar el toast
+    showToast = false;
 
-  protected readonly faTrashCan = faTrashCan;
-  protected readonly faPenToSquare = faPenToSquare;
-  deleteNovedad(novedad: Novedad) {
-    if (confirm('seguro que desea eliminar el novedad?')){
-      this.novedadService.deleteNovedad(novedad._id).subscribe(
-        {
-          next:value=>{
-            console.log(value);
-            this.loadNovedades();
-          },
-          complete:()=>{
-            console.log('novedad borrada');
-          },
-          error:err=>console.error(err)
-        }
-      )
+    constructor() {
+        this.loadNovedades();
     }
-  }
 
+    private loadNovedades() {
+        this.novedadService.getNovedades().subscribe({
+            next: value => {
+                this.dataLoaded = true;
+                this.novedades = value;
+            },
+            complete: () => {
+                console.log('novedades cargadas');
+            },
+            error: err => {
+                console.error(err);
+            }
+        });
+    }
 
+    protected readonly faTrashCan = faTrashCan;
+    protected readonly faPenToSquare = faPenToSquare;
 
+    deleteNovedad(novedad: Novedad) {
+        if (confirm('¿Seguro que desea eliminar la novedad?')) {
+            this.novedadService.deleteNovedad(novedad._id).subscribe({
+                next: () => {
+                    this.loadNovedades();
+                    this.showToastMessage();
+                },
+                complete: () => {
+                    console.log('novedad borrada');
+                },
+                error: err => console.error(err)
+            });
+        }
+    }
+
+    showToastMessage() {
+        this.showToast = true;
+        setTimeout(() => {
+            this.showToast = false;
+        }, 3000); // toast visible 3 segundos
+    }
+
+    hideToast() {
+        this.showToast = false;
+    }
 }

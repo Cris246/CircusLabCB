@@ -1,31 +1,45 @@
 <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="/logoTFG.png" style="max-width: 10%; height: auto;" alt="">
-    </a>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/login" routerLinkActive="active" class="nav-link">Login</a>
-        </li>
-          <li class="nav-item" *ngIf="authService.isAuthenticated()">
-              <a routerLink="/tutorial-list" routerLinkActive="active" class="nav-link">Tutoriales</a>
-          </li>
-
-          <li class="nav-item">
-          <a routerLink="/novedad-list" routerLinkActive="active" class="nav-link">Novedades</a>
-        </li>
-          <li class="nav-item">
-              <a routerLink="/contacto" routerLinkActive="active" class="nav-link">Conocenos</a>
-          </li>
-          <li *ngIf="authService.isAuthenticated()" class="nav-item">
-              <button (click)="logout()" class="btn btn-link nav-link" style="cursor:pointer;">Cerrar sesión</button>
-          </li>
-      </ul>
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="/logoTFG.png" style="max-width: 10%; height: auto;" alt="">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/login" routerLinkActive="active" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item" *ngIf="authService.isAuthenticated()">
+                    <a routerLink="/tutorial-list" routerLinkActive="active" class="nav-link">Tutoriales</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/novedad-list" routerLinkActive="active" class="nav-link">Novedades</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/contacto" routerLinkActive="active" class="nav-link">Conócenos</a>
+                </li>
+                <li *ngIf="authService.isAuthenticated()" class="nav-item">
+                    <button (click)="logout()" class="btn btn-link nav-link" style="cursor:pointer;">Cerrar sesión</button>
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>
 
+<div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 1100;">
+    <div class="toast align-items-center text-white bg-secondary border-0"
+         role="alert"
+         aria-live="assertive"
+         aria-atomic="true"
+         [class.show]="showToast"
+         [class.hide]="!showToast">
+        <div class="d-flex">
+            <div class="toast-body">
+                Has cerrado sesión correctamente.
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" (click)="hideToast()" aria-label="Close"></button>
+        </div>
+    </div>
+</div>

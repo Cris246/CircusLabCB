@@ -11,13 +11,21 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  showToast = false;  // Controla la visibilidad del toast
 
   constructor(public authService: AuthService) {}
 
   logout() {
     this.authService.logout();
-    alert('Has cerrado sesión correctamente.');
-    // Puedes redirigir con router si lo inyectas
-    // this.router.navigate(['/login']);
+    this.showToast = true;  // Muestra el toast
+
+    // Oculta el toast automáticamente después de 3 segundos
+    setTimeout(() => {
+      this.showToast = false;
+    }, 3000);
+  }
+
+  hideToast() {
+    this.showToast = false;  // Permite cerrar el toast con el botón "X"
   }
 }
