@@ -6,7 +6,7 @@ import { TutorialListComponent } from './components/tutorial-list/tutorial-list.
 import { TutorialEditComponent } from './components/tutorial-edit/tutorial-edit.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
-import {ContactoComponent} from "./components/contacto/contacto.component"; // Asegúrate de tener este guard
+import {ContactoComponent} from "./components/contacto/contacto.component";
 
 export const routes: Routes = [
   {
@@ -52,5 +52,5 @@ export const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
-  }
+  },
 ];

@@ -12,4 +12,10 @@ export interface Tutorial{
   media: string
   dificultad: 'principiante' | 'media' | 'dificil';
 }
-
+export interface Usuario {
+  _id: string
+  usuario: string
+  password: string
+  rol: string
+  __v?: number
+}

@@ -6,7 +6,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000/api'; // Ruta del servidor
+  private apiUrl = 'http://localhost:3000/api/circusLab';
+
 
   constructor(private http: HttpClient) {}
 
@@ -14,9 +15,7 @@ export class AuthService {
     return this.http.post<{ token: string }>(`${this.apiUrl}/usuario/login`, { usuario, password });
   }
 
-  register(usuario: string, password: string, rol: string) {
-    return this.http.post(`${this.apiUrl}/usuario/register`, { usuario, password, rol });
-  }
+
 
   isAuthenticated(): boolean {
     return !!localStorage.getItem('token');
@@ -30,4 +29,21 @@ export class AuthService {
   logout(): void {
     localStorage.removeItem('token');
   }
+  getUserRole(): string | null {
+    const token = localStorage.getItem('token');
+    if (!token) return null;
+
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      return payload.rol || null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+
+  isProfesor(): boolean {
+    return this.isAuthenticated() && this.getUserRole() === 'profesor';
+  }
+
 }

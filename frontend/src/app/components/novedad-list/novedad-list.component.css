@@ -8,13 +8,10 @@
   min-height: 150px; /* Altura mínima mayor */
   padding: 20px; /* Espacio interno aumentado */
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
+
   overflow: hidden;
 }
-.novedad-container:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
+
 
 .titulo {
   font-size: 1.3rem;

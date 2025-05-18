@@ -11,14 +11,18 @@
         <li class="nav-item">
           <a routerLink="/login" routerLinkActive="active" class="nav-link">Login</a>
         </li>
-        <li class="nav-item">
-          <a routerLink="/tutorial-list" routerLinkActive="active" class="nav-link">Tutoriales</a>
-        </li>
-        <li class="nav-item">
+          <li class="nav-item" *ngIf="authService.isAuthenticated()">
+              <a routerLink="/tutorial-list" routerLinkActive="active" class="nav-link">Tutoriales</a>
+          </li>
+
+          <li class="nav-item">
           <a routerLink="/novedad-list" routerLinkActive="active" class="nav-link">Novedades</a>
         </li>
           <li class="nav-item">
               <a routerLink="/contacto" routerLinkActive="active" class="nav-link">Conocenos</a>
+          </li>
+          <li *ngIf="authService.isAuthenticated()" class="nav-item">
+              <button (click)="logout()" class="btn btn-link nav-link" style="cursor:pointer;">Cerrar sesión</button>
           </li>
       </ul>
     </div>

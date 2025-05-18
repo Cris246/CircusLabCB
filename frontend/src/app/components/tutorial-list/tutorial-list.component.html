@@ -14,9 +14,11 @@
   </div>
 
 
-    <button class="nuevo-tuto-btn" [routerLink]="'/tutorial-add/'">
-      Nuevo tutorial
-    </button>
+      <div *ngIf="authService.isProfesor()" class="boton-container">
+          <button class="nuevo-tuto-btn" [routerLink]="'/tutorial-add/'">
+              Nuevo Tutorial
+          </button>
+      </div>
   </div>
   @for (tutorial of tutorialesFiltrados; track tutorial._id) {
     <div class="tuto-container mx-auto d-flex align-items-start mb-4 p-3 border rounded shadow-sm" style="height: 200px;">
@@ -33,25 +35,34 @@
       </div>
 
       <!-- Iconos (eliminar / editar) -->
-      <div class="d-flex flex-column align-items-end justify-content-between ms-3" style="height: 100%;">
-        <fa-icon
-          [icon]="faTrashCan"
-          class="fs-3 mb-3 icon-hover"
-          style="color: #6a1b9a;"
-          (click)="deleteTutorial(tutorial)">
-        </fa-icon>
-        <fa-icon
-          [icon]="faMagnifyingGlass" data-bs-toggle="modal" [attr.data-bs-target]="'#Modal'+tutorial._id"
-          class="fs-3 mb-3 icon-hover"
-          style="color: #9b59b6;"
-          (click)="AbreModal(tutorial._id)">
-        </fa-icon>
-        <a
-          [routerLink]="['/tutorial-edit', tutorial._id]"
-          class="text-black fs-3 icon-hover">
-          <fa-icon [icon]="faPenToSquare"></fa-icon>
-        </a>
-      </div>
+        <div class="d-flex flex-column align-items-end justify-content-between ms-3" style="height: 100%;">
+
+            <!-- Icono eliminar visible solo si es profesor -->
+            <fa-icon
+                    *ngIf="authService.isProfesor()"
+                    [icon]="faTrashCan"
+                    class="fs-3 mb-3 icon-hover"
+                    style="color: #6a1b9a;"
+                    (click)="deleteTutorial(tutorial)">
+            </fa-icon>
+
+            <fa-icon
+                    [icon]="faMagnifyingGlass" data-bs-toggle="modal" [attr.data-bs-target]="'#Modal'+tutorial._id"
+                    class="fs-3 mb-3 icon-hover"
+                    style="color: #9b59b6;"
+                    (click)="AbreModal(tutorial._id)">
+            </fa-icon>
+
+            <!-- Icono editar visible solo si es profesor -->
+            <a
+                    *ngIf="authService.isProfesor()"
+                    [routerLink]="['/tutorial-edit', tutorial._id]"
+                    class="text-black fs-3 icon-hover">
+                <fa-icon [icon]="faPenToSquare"></fa-icon>
+            </a>
+
+        </div>
+
 
     </div>
 

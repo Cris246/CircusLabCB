@@ -1,11 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { NovedadService } from "../../services/novedad.service";
-import { Novedad, Tutorial } from "../../common/novedad";
+import {Tutorial } from "../../common/novedad";
 import { FaIconComponent } from "@fortawesome/angular-fontawesome";
 import { RouterLink } from "@angular/router";
 import {faMagnifyingGlass, faPenToSquare, faTrashCan} from "@fortawesome/free-solid-svg-icons";
 import {FormsModule} from "@angular/forms";
 import { Modal } from 'bootstrap';
+import {NgIf} from "@angular/common";
+import { AuthService } from '../../services/auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-tutorial-list',
@@ -13,13 +16,16 @@ import { Modal } from 'bootstrap';
   imports: [
     FaIconComponent,
     RouterLink,
-    FormsModule
+    FormsModule,
+    NgIf,
+      CommonModule,
   ],
   templateUrl: './tutorial-list.component.html',
-  styleUrl: './tutorial-list.component.css'
+  styleUrls: ['./tutorial-list.component.css']
 })
 export class TutorialListComponent {
   private readonly novedadService: NovedadService = inject(NovedadService);
+  public readonly authService = inject(AuthService);
   tutoriales: Tutorial[] = [];
   tutorialesFiltrados: Tutorial[] = [];
 

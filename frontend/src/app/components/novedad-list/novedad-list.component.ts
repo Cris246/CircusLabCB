@@ -5,7 +5,8 @@ import {FaIconComponent} from "@fortawesome/angular-fontawesome";
 import {faPenToSquare, faTrashCan} from "@fortawesome/free-solid-svg-icons";
 import { ReactiveFormsModule} from "@angular/forms";
 import {RouterLink} from "@angular/router";
-
+import { AuthService } from '../../services/auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-novedad-list',
@@ -13,14 +14,16 @@ import {RouterLink} from "@angular/router";
   imports: [
     FaIconComponent,
     ReactiveFormsModule,
-    RouterLink,
+      CommonModule,
+      RouterLink,
 
   ],
   templateUrl: './novedad-list.component.html',
-  styleUrl: './novedad-list.component.css'
+  styleUrls: ['./novedad-list.component.css']
 })
 export class NovedadListComponent {
 private readonly novedadService=inject(NovedadService);
+    public readonly authService = inject(AuthService);
 novedades:Novedad[]=[];
 constructor() {
   this.loadNovedades();
