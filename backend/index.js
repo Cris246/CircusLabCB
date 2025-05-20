@@ -16,7 +16,7 @@ app.use(morgan('dev'));
 
 
 
-// Rutas de la API
+// Rutas
 app.use('/api/circusLab', require('./routes/nov.route'));
 app.use('/api/circusLab', require('./routes/tut.route'));
 app.use('/api/circusLab', require('./routes/user.route'));

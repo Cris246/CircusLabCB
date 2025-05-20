@@ -46,7 +46,8 @@
 
 
 .icon-hover {
-  transition: transform 0.3s ease; /* Transición suave */
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .icon-hover:hover {
@@ -101,3 +102,19 @@
 .filtro-container select:hover {
   background-color: #b388eb;
 }
+
+.bg-purple {
+  background-color: #6a1b9a !important;
+}
+
+.btn-purple {
+  background-color: #9b59b6;
+  color: white;
+  border: none;
+}
+
+.btn-purple:hover {
+  background-color: #8e44ad;
+  color: white;
+}
+

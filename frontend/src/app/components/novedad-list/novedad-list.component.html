@@ -44,7 +44,7 @@
                         [icon]="faTrashCan"
                         class=" fs-3 mb-3 icon-hover"
                         style="color:#6a1b9a"
-                        (click)="deleteNovedad(novedad)">
+                        (click)="mostrarConfirmacion(novedad)">
                 </fa-icon>
 
                 <a
@@ -56,7 +56,28 @@
 
         </div>
     }
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg">
 
+                <div class="modal-header bg-purple text-white">
+                    <h5 class="modal-title" id="confirmDeleteLabel">Confirmar eliminación</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+
+                <div class="modal-body text-center">
+                    <p>¿Estás seguro de que deseas eliminar esta novedad?</p>
+                    <strong>{{ novedadParaEliminar?.titulo }}</strong>
+                </div>
+
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-purple" (click)="confirmarEliminar()">Eliminar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
 }
 
 @placeholder () {

@@ -64,30 +64,46 @@ export class TutorialListComponent {
 
 
 
-  deleteTutorial(tutorial: Tutorial) {
-    if (confirm('¿Seguro que desea eliminar el tutorial?')) {
-      this.novedadService.deleteTutorial(tutorial._id).subscribe({
-        next: value => {
-          console.log(value);
-          this.loadTutoriales(); // recarga y re-filtra
-        },
-        complete: () => {
-          console.log('tutorial borrado');
-        },
-        error: err => console.error(err)
-      });
+
+  tutorialParaEliminar: Tutorial | null = null;
+
+  mostrarConfirmacion(tutorial: Tutorial) {
+    this.tutorialParaEliminar = tutorial;
+
+    const modalElement = document.getElementById('confirmDeleteModal');
+    if (modalElement) {
+      const modal = new Modal(modalElement);
+      modal.show();
     }
   }
+
+  confirmarEliminar() {
+    if (!this.tutorialParaEliminar) return;
+
+    this.novedadService.deleteTutorial(this.tutorialParaEliminar._id).subscribe({
+      next: value => {
+        console.log(value);
+        this.loadTutoriales(); // recarga la lista
+      },
+      complete: () => {
+        console.log('tutorial eliminado');
+        this.tutorialParaEliminar = null;
+      },
+      error: err => console.error(err)
+    });
+
+    // Cierra el modal
+    const modalElement = document.getElementById('confirmDeleteModal');
+    if (modalElement) {
+      const modal = Modal.getInstance(modalElement);
+      modal?.hide();
+    }
+  }
+
 
   protected readonly faTrashCan = faTrashCan;
   protected readonly faPenToSquare = faPenToSquare;
   protected readonly faMagnifyingGlass = faMagnifyingGlass;
 
-  AbreModal(id: string) {
-    const modalEl = document.getElementById('Modal' + id);
-    if (modalEl) {
-      const modal = new Modal(modalEl);
-      modal.show();
-    }
-  }
+
 }

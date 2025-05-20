@@ -1,12 +1,13 @@
 import {Component, inject} from '@angular/core';
 import {NovedadService} from "../../services/novedad.service";
-import {Novedad} from "../../common/novedad";
+import {Novedad, Tutorial} from "../../common/novedad";
 import {FaIconComponent} from "@fortawesome/angular-fontawesome";
 import {faPenToSquare, faTrashCan} from "@fortawesome/free-solid-svg-icons";
 import { ReactiveFormsModule} from "@angular/forms";
 import {RouterLink} from "@angular/router";
 import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
+import {Modal} from "bootstrap";
 
 @Component({
     selector: 'app-novedad-list',
@@ -64,6 +65,41 @@ export class NovedadListComponent {
                 },
                 error: err => console.error(err)
             });
+        }
+    }
+
+    novedadParaEliminar: Novedad | null = null;
+
+    mostrarConfirmacion(novedad: Novedad) {
+        this.novedadParaEliminar = novedad;
+
+        const modalElement = document.getElementById('confirmDeleteModal');
+        if (modalElement) {
+            const modal = new Modal(modalElement);
+            modal.show();
+        }
+    }
+
+    confirmarEliminar() {
+        if (!this.novedadParaEliminar) return;
+
+        this.novedadService.deleteTutorial(this.novedadParaEliminar._id).subscribe({
+            next: value => {
+                console.log(value);
+                this.loadNovedades(); // recarga la lista
+            },
+            complete: () => {
+                console.log('novedad eliminado');
+                this.novedadParaEliminar = null;
+            },
+            error: err => console.error(err)
+        });
+
+        // Cierra el modal
+        const modalElement = document.getElementById('confirmDeleteModal');
+        if (modalElement) {
+            const modal = Modal.getInstance(modalElement);
+            modal?.hide();
         }
     }
 

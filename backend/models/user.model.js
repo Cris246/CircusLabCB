@@ -5,10 +5,12 @@ const { Schema } = mongoose;
 const usuarioSchema = new Schema({
     usuario: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    rol: { type: String, enum: ['profesor', 'alumno'], required: true }
+    rol: { type: String, enum: ['profesor', 'alumno'], required: true },
+
+
 });
 
-// Middleware para encriptar la contraseña antes de guardar
+//esto encripta la contraseña
 usuarioSchema.pre('save', async function (next) {
     if (!this.isModified('password')) return next();
     try {

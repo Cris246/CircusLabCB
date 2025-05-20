@@ -24,6 +24,7 @@ export class LoginComponent {
     });
   }
 
+
   login() {
     if (this.loginForm.invalid) {
       alert('Por favor, completa todos los campos');
