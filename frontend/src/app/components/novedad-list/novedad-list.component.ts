@@ -2,7 +2,7 @@ import {Component, inject} from '@angular/core';
 import {NovedadService} from "../../services/novedad.service";
 import {Novedad, Tutorial} from "../../common/novedad";
 import {FaIconComponent} from "@fortawesome/angular-fontawesome";
-import {faPenToSquare, faTrashCan} from "@fortawesome/free-solid-svg-icons";
+import {faEye, faMagnifyingGlass, faPenToSquare, faTrashCan} from "@fortawesome/free-solid-svg-icons";
 import { ReactiveFormsModule} from "@angular/forms";
 import {RouterLink} from "@angular/router";
 import { AuthService } from '../../services/auth.service';
@@ -70,6 +70,26 @@ export class NovedadListComponent {
 
     novedadParaEliminar: Novedad | null = null;
 
+    abrirModal(novedad: Novedad) {
+        this.novedadService.getOneNovedad(novedad._id).subscribe({
+            next: (novedadActualizada) => {
+                // Actualiza la novedad con el contador actualizado
+                const index = this.novedades.findIndex(n => n._id === novedadActualizada._id);
+                if (index !== -1) {
+                    this.novedades[index] = novedadActualizada;
+                }
+
+                // Abre el modal manualmente
+                const modalElement = document.getElementById('Modal' + novedad._id);
+                if (modalElement) {
+                    const modal = new Modal(modalElement);
+                    modal.show();
+                }
+            },
+            error: (err) => console.error(err)
+        });
+    }
+
     mostrarConfirmacion(novedad: Novedad) {
         this.novedadParaEliminar = novedad;
 
@@ -83,7 +103,7 @@ export class NovedadListComponent {
     confirmarEliminar() {
         if (!this.novedadParaEliminar) return;
 
-        this.novedadService.deleteTutorial(this.novedadParaEliminar._id).subscribe({
+        this.novedadService.deleteNovedad(this.novedadParaEliminar._id).subscribe({
             next: value => {
                 console.log(value);
                 this.loadNovedades(); // recarga la lista
@@ -113,4 +133,7 @@ export class NovedadListComponent {
     hideToast() {
         this.showToast = false;
     }
+
+    protected readonly faMagnifyingGlass = faMagnifyingGlass;
+    protected readonly faEye = faEye;
 }

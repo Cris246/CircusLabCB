@@ -6,7 +6,7 @@ import { TutorialListComponent } from './components/tutorial-list/tutorial-list.
 import { TutorialEditComponent } from './components/tutorial-edit/tutorial-edit.component';
 import { LoginComponent } from './components/login/login.component';
 import {ContactoComponent} from "./components/contacto/contacto.component";
-
+import { AuthGuard } from './guards/auth.guard';
 export const routes: Routes = [
   {
     path: '',
@@ -36,6 +36,7 @@ export const routes: Routes = [
   {
     path: 'tutorial-list',
     component: TutorialListComponent,
+    canActivate: [AuthGuard]
 
   },
   {

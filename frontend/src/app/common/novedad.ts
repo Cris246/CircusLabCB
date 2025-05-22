@@ -3,6 +3,7 @@ export interface Novedad {
   titulo: string
   contenido: string
   media: string
+  visitas:number
   __v?: number
 }
 export interface Tutorial{
