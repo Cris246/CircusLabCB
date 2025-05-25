@@ -30,10 +30,6 @@
           <div class="form-floating mb-3">
             <input type="text" formControlName="media" class="form-control" id="media" placeholder="media">
             <label for="media">Imagen</label>
-            <div *ngIf="media.invalid && (media.dirty || media.touched)">
-              <div class="alert alert-danger" *ngIf="media.errors?.['required']">Se necesita una imagen</div>
-              <div class="alert alert-danger" *ngIf="media.errors?.['minlength']">Debe de tener al menos 5 caracteres</div>
-            </div>
           </div>
 
           <!-- Botón para enviar el formulario -->
@@ -49,7 +45,7 @@
     <div class="col-md-6 my-2">
       <div class="card shadow bg-transparent border-0">
         <!-- Mostrar imagen o imagen por defecto -->
-        <img [src]="media.value ? media.value : 'src/assets/notFound.jpg'" alt="imagen de novedad" class="img-fluid img-preview">
+        <img [src]="media.value ? media.value : '/notFound.jpg'" alt="imagen de novedad" class="img-fluid img-preview">
       </div>
     </div>
   </div>

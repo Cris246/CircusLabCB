@@ -12,7 +12,10 @@ import {faEnvelope, faLocationDot, faPhone} from "@fortawesome/free-solid-svg-ic
   styleUrl: './contacto.component.css'
 })
 export class ContactoComponent {
+  faqOpen: boolean[] = [false, false, false];
 
+  toggleFaq(index: number) {
+    this.faqOpen[index] = !this.faqOpen[index];}
   protected readonly faEnvelope = faEnvelope;
   protected readonly faPhone = faPhone;
   protected readonly faLocationDot = faLocationDot;

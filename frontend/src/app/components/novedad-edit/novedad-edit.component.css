@@ -31,3 +31,13 @@
 .btn-lila:hover {
   background-color: #8e44ad;
 }
+.visitas-ojo{
+  background-color: #9b59b6; /* morado */
+  color: white;
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}

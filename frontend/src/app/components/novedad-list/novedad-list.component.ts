@@ -53,20 +53,6 @@ export class NovedadListComponent {
     protected readonly faTrashCan = faTrashCan;
     protected readonly faPenToSquare = faPenToSquare;
 
-    deleteNovedad(novedad: Novedad) {
-        if (confirm('¿Seguro que desea eliminar la novedad?')) {
-            this.novedadService.deleteNovedad(novedad._id).subscribe({
-                next: () => {
-                    this.loadNovedades();
-                    this.showToastMessage();
-                },
-                complete: () => {
-                    console.log('novedad borrada');
-                },
-                error: err => console.error(err)
-            });
-        }
-    }
 
     novedadParaEliminar: Novedad | null = null;
 
@@ -130,9 +116,6 @@ export class NovedadListComponent {
         }, 3000); // toast visible 3 segundos
     }
 
-    hideToast() {
-        this.showToast = false;
-    }
 
     protected readonly faMagnifyingGlass = faMagnifyingGlass;
     protected readonly faEye = faEye;

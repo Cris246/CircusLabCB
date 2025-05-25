@@ -25,7 +25,7 @@ export class TutorialEditComponent implements OnInit {
     _id: [''],
     titulo: ['', [Validators.required]],
     contenido: ['', [Validators.required]],
-    media: ['', [Validators.required, Validators.minLength(5)]],
+    media: [''],
     dificultad: ['', [Validators.required]],
     __v: ['']
   });
@@ -69,36 +69,21 @@ export class TutorialEditComponent implements OnInit {
     return this.formTutorial.get('dificultad');
   }
 
-  // Método para manejar la carga de archivos
-  onFileSelected(event: any) {
-    const file = event.target.files[0];
-    if (file) {
-      // Crear un objeto FormData para enviar el archivo al backend
-      const formData = new FormData();
-      formData.append('image', file, file.name);
-
-      // Subir la imagen a través del servicio
-      this.novedadService.uploadImage(formData).subscribe(
-        (response) => {
-          // Asignar la URL de la imagen recibida desde el backend
-          this.formTutorial.patchValue({
-            media: response.imageUrl // Suponiendo que el backend devuelve la URL de la imagen
-          });
-        },
-        (error) => {
-          console.error('Error al subir la imagen', error);
-        }
-      );
-    }
-  }
 
   submit() {
     if (this.formTutorial.invalid) {
       this.formTutorial.markAllAsTouched();
       return;
     }
-
+    if (!this.formTutorial.value.media || this.formTutorial.value.media.trim() === '') {
+      this.formTutorial.patchValue({ media: '/notFound.jpg' });
+    }
     const formValue = this.formTutorial.getRawValue();
+
+    // ✅ Si no se ha especificado ninguna imagen, se asigna la predeterminada
+    if (!formValue.media || formValue.media.trim() === '') {
+      formValue.media = 'assets/notFound.jpg';
+    }
 
     if (this.edit) {
       this.novedadService.updateTutorial(formValue).subscribe({
@@ -126,4 +111,5 @@ export class TutorialEditComponent implements OnInit {
       });
     }
   }
+
 }

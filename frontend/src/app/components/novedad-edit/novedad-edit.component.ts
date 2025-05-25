@@ -24,8 +24,9 @@ export class NovedadEditComponent implements OnInit {
     _id: [''],
     titulo: ['', [Validators.required]],
     contenido: ['', [Validators.required]],
-    media: ['', [Validators.required, Validators.minLength(5)]],
+    media: [''],
     __v: ['']
+
   });
 
   dataLoaded = false;
@@ -45,7 +46,7 @@ export class NovedadEditComponent implements OnInit {
   private loadNovedad() {
     this.novedadService.getOneNovedad(this.id).subscribe({
       next: value => {
-        this.formNovedad.setValue(value);
+        this.formNovedad.patchValue(value);
         this.dataLoaded = true;
       },
       error: err => {
@@ -71,7 +72,9 @@ export class NovedadEditComponent implements OnInit {
       this.formNovedad.markAllAsTouched();
       return;
     }
-
+    if (!this.formNovedad.value.media || this.formNovedad.value.media.trim() === '') {
+      this.formNovedad.patchValue({ media: '/notFound.jpg' });
+    }
     const formValue = this.formNovedad.getRawValue();
     delete formValue.__v;
 
