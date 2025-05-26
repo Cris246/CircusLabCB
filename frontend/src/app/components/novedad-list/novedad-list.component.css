@@ -29,7 +29,12 @@
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
-
+.imagen-fija {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
 .imagen-novedad {
   width: 140px;
   height: 140px;

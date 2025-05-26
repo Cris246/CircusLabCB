@@ -2,11 +2,11 @@
   max-width: 1500px;
   margin: 20px auto;
   border-radius: 16px;
-  background-color: rgba(255, 255, 255, 0.75); /* Fondo ligeramente translúcido */
-  backdrop-filter: blur(20px); /* Desenfoque más suave */
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  min-height: 150px; /* Altura mínima mayor */
-  padding: 20px; /* Espacio interno aumentado */
+  min-height: 150px;
+  padding: 20px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   overflow: hidden;
 }
@@ -21,20 +21,20 @@
 .contenido {
   font-size: 1rem;
   color: #333;
-  max-height: 3.6em; /* 2 líneas aprox. según el tamaño de fuente */
+  max-height: 3.6em;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* número de líneas que se muestran */
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 
 
 .imagen-fija {
   width: 150px;
-  height: 150px; /* o la altura que prefieras */
+  height: 150px;
   overflow: hidden;
-  flex-shrink: 0; /* evita que se reduzca si el texto es muy largo */
+  flex-shrink: 0;
 }
 
 .imagen-tuto {
@@ -51,7 +51,7 @@
 }
 
 .icon-hover:hover {
-  transform: scale(1.2); /* Hace que el icono se agrande un poco en hover */
+  transform: scale(1.2); /
 }
 .boton-container {
   display: flex;
@@ -76,8 +76,8 @@
 .filtro-container {
   display: inline-block;
   padding: 10px 15px;
-  background-color: rgba(255, 255, 255, 0.75); /* Blanco traslúcido */
-  border-radius: 25px; /* Bordes redondeados */
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 25px;
 
 }
 
@@ -90,9 +90,9 @@
 
 .filtro-container select {
   padding: 8px 12px;
-  border-radius: 20px; /* Bordes redondeados */
-  background-color: #d3b4f7; /* Color lila */
-  border: 1px solid #cfa0e3; /* Borde lila claro */
+  border-radius: 20px;
+  background-color: #d3b4f7;
+  border: 1px solid #cfa0e3;
   font-size: 1rem;
   font-weight: 500;
   outline: none;
