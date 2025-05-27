@@ -1,8 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
+
+declare var bootstrap: any;
 
 @Component({
   selector: 'app-login',
@@ -13,6 +15,10 @@ import { CommonModule } from '@angular/common';
 })
 export class LoginComponent {
   loginForm: FormGroup;
+  toastMessage = '';
+
+  @ViewChild('toastElem') toastElem!: ElementRef;
+
   private readonly fb = inject(FormBuilder);
   private readonly router = inject(Router);
   private readonly authService = inject(AuthService);
@@ -24,10 +30,9 @@ export class LoginComponent {
     });
   }
 
-
   login() {
     if (this.loginForm.invalid) {
-      alert('Por favor, completa todos los campos');
+      this.showToast('Por favor, completa todos los campos');
       return;
     }
 
@@ -40,8 +45,20 @@ export class LoginComponent {
       },
       error: (err) => {
         console.error(err);
-        alert('Usuario o contraseña incorrectos');
+        this.showToast('Usuario o contraseña incorrectos');
       }
     });
+  }
+
+  showToast(message: string) {
+    this.toastMessage = message;
+    const toast = new bootstrap.Toast(this.toastElem.nativeElement);
+    toast.show();
+  }
+
+  hideToast() {
+
+    const toast = bootstrap.Toast.getInstance(this.toastElem.nativeElement);
+    toast?.hide();
   }
 }

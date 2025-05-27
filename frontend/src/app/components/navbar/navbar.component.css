@@ -8,7 +8,7 @@
   cursor: default;
 }
 .no-pointer-link {
-  pointer-events: none; 
+  pointer-events: none;
 }
 .custom-navbar {
   background-color: rgba(255, 255, 255, 0.4);

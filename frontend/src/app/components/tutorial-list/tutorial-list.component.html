@@ -23,21 +23,21 @@
   @for (tutorial of tutorialesFiltrados; track tutorial._id) {
     <div class="tuto-container mx-auto d-flex align-items-start mb-4 p-3 border rounded shadow-sm" style="height: 200px;">
 
-      <!-- Imagen -->
+
       <div class=" me-3 imagen-fija" style="width: 150px; height: 100%; overflow: hidden;">
         <img  [src]="tutorial.media?.trim() || '/notFound.jpg'" [alt]="tutorial.titulo" class="imagen-tuto">
       </div>
 
-      <!-- Contenido -->
+
       <div class="flex-grow-1 d-flex flex-column justify-content-between">
         <div class="titulo fw-bold fs-5">{{ tutorial.titulo }}</div>
         <div class="contenido text-muted">{{ tutorial.contenido }}</div>
       </div>
 
-      <!-- Iconos (eliminar / editar) -->
+
         <div class="d-flex flex-column align-items-end justify-content-between ms-3" style="height: 100%;">
 
-            <!-- Icono eliminar visible solo si es profesor -->
+
             <fa-icon
                     *ngIf="authService.isProfesor()"
                     [icon]="faTrashCan"
@@ -56,7 +56,7 @@
             </fa-icon>
 
 
-            <!-- Icono editar visible solo si es profesor -->
+
             <a
                     *ngIf="authService.isProfesor()"
                     [routerLink]="['/tutorial-edit', tutorial._id]"
@@ -70,7 +70,7 @@
     </div>
 
 
-    <!-- Modal -->
+
     <div class="modal fade" [attr.id]="'Modal'+tutorial._id" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg"> <!-- Tamaño más grande -->
         <div class="modal-content">
@@ -90,7 +90,7 @@
                   style="object-fit: cover; width: 100%; height: 100%;">
               </div>
 
-              <!-- Texto a la derecha -->
+
               <div class="flex-grow-1">
                 <p class="text-muted">{{ tutorial.contenido }}</p>
               </div>
@@ -104,9 +104,9 @@
       </div>
     </div>
 
-    <!-- FIN MODAL -->
+
   }
-    <!-- Modal de confirmación de eliminación -->
+
     <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0 shadow-lg">

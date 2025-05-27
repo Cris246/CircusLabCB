@@ -12,7 +12,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  showToast = false;  // Controla la visibilidad del toast
+  showToast = false;
 
   constructor(public authService: AuthService,private router: Router) {}
 
@@ -21,13 +21,13 @@ export class NavbarComponent {
     this.showToast = true;
     this.router.navigate(['/inicio']);
 
-    // Oculta el toast automáticamente después de 3 segundos
+
     setTimeout(() => {
       this.showToast = false;
     }, 3000);
   }
 
   hideToast() {
-    this.showToast = false;  // Permite cerrar el toast con el botón "X"
+    this.showToast = false;
   }
 }

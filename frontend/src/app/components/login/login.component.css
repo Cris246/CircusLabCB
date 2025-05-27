@@ -18,12 +18,12 @@
 }
 .cuadrado2 {
   background-color: rgba(255, 255, 255, 0.8);
-  display: flex; /* Flexbox para organizar contenido */
+  display: flex;
   align-items: center;
   padding: 20px;
   width: 1000px;
-  height: 500px; /* Alto */
-  border-radius: 20px; /* Bordes redondeados */
+  height: 500px;
+  border-radius: 20px;
   backdrop-filter: blur(20px);
 
 }

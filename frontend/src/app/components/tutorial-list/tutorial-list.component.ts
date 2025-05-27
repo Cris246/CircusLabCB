@@ -41,7 +41,7 @@ export class TutorialListComponent {
       next: value => {
         this.dataLoaded = true;
         this.tutoriales = value;
-        this.filtrarTutoriales(); // aplica el filtro después de cargar
+        this.filtrarTutoriales();
       },
       complete: () => {
         console.log('tutoriales cargados');
@@ -54,7 +54,7 @@ export class TutorialListComponent {
 
   filtrarTutoriales() {
     if (this.filtroDificultad === '') {
-      this.tutorialesFiltrados = this.tutoriales;  // Mostrar todos los tutoriales
+      this.tutorialesFiltrados = this.tutoriales;
     } else {
       this.tutorialesFiltrados = this.tutoriales.filter(
         t => t.dificultad === this.filtroDificultad
@@ -83,7 +83,7 @@ export class TutorialListComponent {
     this.novedadService.deleteTutorial(this.tutorialParaEliminar._id).subscribe({
       next: value => {
         console.log(value);
-        this.loadTutoriales(); // recarga la lista
+        this.loadTutoriales();
       },
       complete: () => {
         console.log('tutorial eliminado');
@@ -92,7 +92,7 @@ export class TutorialListComponent {
       error: err => console.error(err)
     });
 
-    // Cierra el modal
+
     const modalElement = document.getElementById('confirmDeleteModal');
     if (modalElement) {
       const modal = Modal.getInstance(modalElement);

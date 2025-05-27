@@ -28,7 +28,7 @@ export class NovedadListComponent {
     novedades: Novedad[] = [];
     dataLoaded = false;
 
-    // Estado para controlar el toast
+
     showToast = false;
 
     constructor() {
@@ -59,13 +59,13 @@ export class NovedadListComponent {
     abrirModal(novedad: Novedad) {
         this.novedadService.getOneNovedad(novedad._id).subscribe({
             next: (novedadActualizada) => {
-                // Actualiza la novedad con el contador actualizado
+
                 const index = this.novedades.findIndex(n => n._id === novedadActualizada._id);
                 if (index !== -1) {
                     this.novedades[index] = novedadActualizada;
                 }
 
-                // Abre el modal manualmente
+
                 const modalElement = document.getElementById('Modal' + novedad._id);
                 if (modalElement) {
                     const modal = new Modal(modalElement);
@@ -92,7 +92,7 @@ export class NovedadListComponent {
         this.novedadService.deleteNovedad(this.novedadParaEliminar._id).subscribe({
             next: value => {
                 console.log(value);
-                this.loadNovedades(); // recarga la lista
+                this.loadNovedades();
             },
             complete: () => {
                 console.log('novedad eliminado');
@@ -101,7 +101,7 @@ export class NovedadListComponent {
             error: err => console.error(err)
         });
 
-        // Cierra el modal
+
         const modalElement = document.getElementById('confirmDeleteModal');
         if (modalElement) {
             const modal = Modal.getInstance(modalElement);
@@ -113,7 +113,7 @@ export class NovedadListComponent {
         this.showToast = true;
         setTimeout(() => {
             this.showToast = false;
-        }, 3000); // toast visible 3 segundos
+        }, 3000);
     }
 
 

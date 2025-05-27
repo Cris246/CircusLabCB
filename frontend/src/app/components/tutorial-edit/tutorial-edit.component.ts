@@ -80,7 +80,7 @@ export class TutorialEditComponent implements OnInit {
     }
     const formValue = this.formTutorial.getRawValue();
 
-    // ✅ Si no se ha especificado ninguna imagen, se asigna la predeterminada
+
     if (!formValue.media || formValue.media.trim() === '') {
       formValue.media = 'assets/notFound.jpg';
     }

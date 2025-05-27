@@ -1,25 +1,25 @@
 
 .cuadrado {
   background-color: rgba(255, 255, 255, 0.8);
-  display: flex; /* Flexbox para organizar contenido */
+  display: flex;
   align-items: center;
   padding: 20px;
   width: 1000px;
-  height: 500px; /* Alto */
-  border-radius: 20px; /* Bordes redondeados */
-  backdrop-filter: blur(10px); /* Efecto de desenfoque */
+  height: 500px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
 }
 
 .texto {
-  flex: 1; /* El texto ocupa el espacio restante */
-  margin-right: 20px; /* Espacio entre el texto y la imagen */
+  flex: 1;
+  margin-right: 20px;
   font-size: 16px;
 }
 
 .imagen {
-  width: 200px; /* Ajusta el ancho según necesites */
-  height: 300px; /* Ajusta la altura mayor para hacerlo vertical */
-  object-fit: cover; /* Para que la imagen llene el espacio sin deformarse */
-  display: block; /* Evita márgenes adicionales si está dentro de un contenedor inline */
-  border-radius: 10px; /* Opcional: bordes redondeados */
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
 }

@@ -7,27 +7,27 @@
   display: block;
 }
 
-/* Estilo del formulario dentro de un cuadrado */
+
 .form-container {
-  background-color: rgba(255, 255, 255, 0.75); /* Fondo ligeramente translúcido */
-  backdrop-filter: blur(20px); /* Desenfoque más suave */
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
   padding: 30px;
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  margin-top: 20px; /* Separación desde arriba */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
 }
 
-/* Estilo personalizado para el botón lila */
+
 .btn-lila {
-  background-color: #9b59b6; /* Lila */
-  color: white; /* Texto en blanco */
-  border: none; /* Sin borde */
-  padding: 10px 20px; /* Padding ajustado */
-  border-radius: 5px; /* Bordes redondeados */
-  transition: background-color 0.3s ease; /* Efecto de transición */
+  background-color: #9b59b6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .btn-lila:hover {
-  background-color: #8e44ad; /* Lila más oscuro cuando se pasa el ratón */
+  background-color: #8e44ad;
 }
 
