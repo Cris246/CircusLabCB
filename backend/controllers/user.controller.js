@@ -1,7 +1,7 @@
 const Usuario = require('../models/user.model');
 const jwt = require('jsonwebtoken');
 
-// Función para obtener todos los usuarios
+
 exports.getAllUsers = async (req, res) => {
     try {
         const usuarios = await Usuario.find();
@@ -16,7 +16,7 @@ exports.getAllUsers = async (req, res) => {
     }
 };
 
-// Función para registrar un nuevo usuario
+
 exports.registerUser = async (req, res) => {
     const { usuario, password, rol } = req.body;
 
