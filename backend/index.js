@@ -13,10 +13,10 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
 
-app.use(express.static(path.join(dirname, 'dist/frontend')));
+app.use(express.static(path.join(__dirname, 'dist/frontend')));
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(dirname, 'dist/frontend/index.html'));
+    res.sendFile(path.join(__dirname, 'dist/frontend/index.html'));
 });
 
 
