@@ -1,18 +1,19 @@
 // auth.service.ts
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import {environment} from "../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000/api/circusLab';
+
 
 
   constructor(private http: HttpClient) {}
 
   login(usuario: string, password: string) {
-    return this.http.post<{ token: string }>(`${this.apiUrl}/usuario/login`, { usuario, password });
+    return this.http.post<{ token: string }>(environment.baseUrl+'usuario/login', { usuario, password });
   }
 
 
