@@ -6,8 +6,13 @@ const app = express();
 const { mongoose } = require('./database');
 const { json } = require('express');
 
-app.set('port', process.env.PORT || 3000);
 
+app.set('port', process.env.PORT || 3000);
+app.use(cors({
+    origin: 'https://circuslabcb.onrender.com/',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+}));
 // Middleware
 app.use(cors());
 app.use(express.json());
