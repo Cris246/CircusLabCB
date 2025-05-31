@@ -20,27 +20,13 @@ app.use(morgan('dev'));
 
 app.use(express.static(path.join(__dirname, '../frontend/dist/frontend/browser')));
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
 
 app.get('*', (req, res) => {
     res.sendFile((path.join(__dirname, '../frontend/dist/frontend/browser')));
 });
 
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 // Rutas
 app.use('/api/circusLab', require('./routes/nov.route'));
 app.use('/api/circusLab', require('./routes/tut.route'));
