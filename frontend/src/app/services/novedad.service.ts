@@ -15,7 +15,7 @@ export class NovedadService {
 
   // Métodos existentes
   getNovedades(): Observable<Novedad[]> {
-    return this.http.get<Novedad[]>(`${environment.baseUrl}circusLab/`);
+    return this.http.get<Novedad[]>(environment.baseUrl+'circusLab/');
   }
 
   getOneNovedad(id: string): Observable<Novedad> {
