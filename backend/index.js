@@ -18,24 +18,21 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
 
-// Serve Angular static files
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Route everything else to index.html
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/index.html'));
-});
-
 // Rutas
 app.use('/api/circusLab', require('./routes/nov.route'));
 app.use('/api/circusLab', require('./routes/tut.route'));
 app.use('/api/circusLab', require('./routes/user.route'));
 
-// Ruta raíz
-app.use('/', (req, res) => {
-    res.json({ mensaje: 'Bienvenido a CircusLab' });
-});
+// Replace with your Angular dist folder name
+const distFolder = path.join(__dirname, '../frontend/dist/browser');
 
+// Serve static files
+app.use(express.static(distFolder));
+
+// Handle Angular routing (HTML5 mode)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(distFolder, 'index.html'));
+});
 
 // Ruta no encontrada
 app.use((req, res) => {

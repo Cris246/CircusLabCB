@@ -1,1 +1,0 @@
-import{a,b,c,d,e,f,g,h,i,j}from"./chunk-D4R76XSD.js";import"./chunk-TMMUDDY5.js";import"./chunk-QX2Z6O4Y.js";export{a as FaConfig,f as FaDuotoneIconComponent,e as FaIconComponent,b as FaIconLibrary,g as FaLayersComponent,h as FaLayersCounterComponent,i as FaLayersTextComponent,d as FaStackComponent,c as FaStackItemSizeDirective,j as FontAwesomeModule};

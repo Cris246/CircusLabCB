@@ -14,11 +14,6 @@ export const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: '**',
-    redirectTo: 'inicio',
-    pathMatch: 'full'
-  },
-  {
     path: 'inicio',
     component: InicioComponent
   },
@@ -57,5 +52,10 @@ export const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'inicio',
+    pathMatch: 'full'
   },
 ];
