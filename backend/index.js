@@ -21,6 +21,7 @@ app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '../frontend/dist/frontend/browser')));
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 app.get('*', (req, res) => {
     res.sendFile((path.join(__dirname, '../frontend/dist/frontend/browser')));
@@ -28,6 +29,8 @@ app.get('*', (req, res) => {
 
 <<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
