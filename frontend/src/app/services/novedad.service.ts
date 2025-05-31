@@ -2,7 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Novedad, Tutorial } from '../common/novedad';
-import {environment} from "../environments/environment";
+import {environment} from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class NovedadService {
 
   // Métodos existentes
   getNovedades(): Observable<Novedad[]> {
-    return this.http.get<Novedad[]>(environment.baseUrl+'circusLab/');
+    return this.http.get<Novedad[]>(`${environment.baseUrl}circusLab/`);
   }
 
   getOneNovedad(id: string): Observable<Novedad> {
