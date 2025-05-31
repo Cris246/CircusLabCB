@@ -1,5 +1,5 @@
 
 export const environment = {
     production: true,
-    baseUrl: 'https://circuslabcb.onrender.com/api/',
+    baseUrl: 'https://circuslabcb.onrender.com/',
 };
