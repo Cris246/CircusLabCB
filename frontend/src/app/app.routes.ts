@@ -14,6 +14,11 @@ export const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: '**',
+    redirectTo: 'inicio',
+    pathMatch: 'full'
+  },
+  {
     path: 'inicio',
     component: InicioComponent
   },

@@ -28,7 +28,7 @@
 .navbar .nav-link:hover,
 .navbar .nav-link:focus {
   box-shadow: 0 0 15px rgba(128, 0, 128, 0.5);
-  background-color: rgba(128, 0, 128, 0.1); /
+  background-color: rgba(128, 0, 128, 0.1);
   outline: none;
 }
 
