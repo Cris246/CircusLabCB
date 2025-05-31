@@ -18,14 +18,13 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
 
-app.use(express.static(path.join(__dirname, '../frontend/dist/frontend/browser')));
+// Serve Angular static files
+app.use(express.static(path.join(__dirname, 'public')));
 
-
-
+// Route everything else to index.html
 app.get('*', (req, res) => {
-    res.sendFile((path.join(__dirname, '../frontend/dist/frontend/browser')));
+    res.sendFile(path.join(__dirname, 'public/index.html'));
 });
-
 
 // Rutas
 app.use('/api/circusLab', require('./routes/nov.route'));

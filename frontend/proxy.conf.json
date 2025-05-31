@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "https://circuslabcb.onrender.com",  
+    "target": "https://circuslabcb.onrender.com",
     "secure": false
   }
 }
