@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    baseUrl: 'https://circuslabcb.onrender.com/',
+    baseUrl: 'https://circuslabcb.onrender.com/api/',
 };
