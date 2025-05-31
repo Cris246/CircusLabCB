@@ -26,7 +26,10 @@ app.get('*', (req, res) => {
     res.sendFile((path.join(__dirname, '../frontend/dist/frontend/browser')));
 });
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 // Rutas
